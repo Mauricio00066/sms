@@ -1,0 +1,31 @@
+<div class="card">
+    <p-table [value]="campains" [tableStyle]="{'min-width': '60rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="code" style="width:20%">code <p-sortIcon field="code"></p-sortIcon></th>
+                <th pSortableColumn="title" style="width:20%">title <p-sortIcon field="title"></p-sortIcon></th>
+                <th pSortableColumn="sender" style="width:20%">sender <p-sortIcon field="sender"></p-sortIcon></th>
+                <th pSortableColumn="list_type" style="width:20%">list_type <p-sortIcon field="list_type"></p-sortIcon></th>
+                <th pSortableColumn="initial_date" style="width:20%">initial_date <p-sortIcon field="initial_date"></p-sortIcon></th>
+                <th pSortableColumn="final_date" style="width:20%">final_date <p-sortIcon field="final_date"></p-sortIcon></th>
+                <th pSortableColumn="total_msg" style="width:20%">total_msg <p-sortIcon field="total_msg"></p-sortIcon></th>
+                <th pSortableColumn="msg_sent" style="width:20%">msg_sent <p-sortIcon field="msg_sent"></p-sortIcon></th>
+                <th pSortableColumn="state" style="width:20%">state <p-sortIcon field="state"></p-sortIcon></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-campain>
+            <tr>
+                <td>{{campain.code}}</td>
+                <td>{{campain.title}}</td>
+                <td>{{campain.sender}}</td>
+                <td>{{campain.list_type}}</td>
+                <td>{{campain.initial_date}}</td>
+                <td>{{campain.final_date}}</td>
+                <td>{{campain.total_msg}}</td>
+                <td>{{campain.msg_sent}}</td>
+                <td>{{campain.state}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <pre>{{ campains | json }}</pre>
+</div>
